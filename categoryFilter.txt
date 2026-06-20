@@ -1,0 +1,16 @@
+``javascript
+categoryFilter.addEventListener(
+    "change",
+    async (e) => {
+
+        const category = e.target.value;
+
+        const response = await fetch(
+            `/api/products/category/${category}`
+        );
+
+        const products = await response.json();
+
+        displayProducts(products);
+    }
+);
