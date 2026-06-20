@@ -1,0 +1,13 @@
+```javascript
+searchBox.addEventListener("input", async (e) => {
+    const keyword = e.target.value;
+
+    const response = await fetch(
+        `/api/products?search=${keyword}`
+    );
+
+    const products = await response.json();
+
+    displayProducts(products);
+});
+```
